@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FileText, Download, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export default function Resume() {
   const resumeUrl = "/Doshi Bhavya  resume.pdf"; // Path to your resume in public folder
@@ -19,7 +20,7 @@ export default function Resume() {
         </motion.h2>
 
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          {/* Resume Preview/Icon */}
+          {/* Resume Preview Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -27,14 +28,18 @@ export default function Resume() {
             className="w-full md:w-1/2 relative group"
           >
             <div className="absolute -inset-2 bg-gradient-to-r from-orange-primary/50 to-orange-secondary/50 rounded-3xl blur-xl group-hover:blur-2xl transition-all opacity-30"></div>
-            <div className="relative bg-dark-card/40 backdrop-blur-md border border-orange-primary/30 rounded-3xl p-8 flex flex-col items-center justify-center aspect-[3/4] overflow-hidden">
-              <div className="w-24 h-24 bg-orange-primary/10 rounded-full flex items-center justify-center mb-6">
-                <FileText className="text-orange-primary w-12 h-12" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Curriculum Vitae</h3>
-              <p className="text-gray-400 text-center mb-8">
-                Detailed overview of my professional experience, skills, and education.
-              </p>
+            <div className="relative bg-dark-card/40 backdrop-blur-md border border-orange-primary/30 rounded-3xl p-3 flex flex-col items-center justify-center aspect-[3/4] overflow-hidden">
+               <div className="relative w-full h-full rounded-2xl overflow-hidden mb-4">
+                  <Image 
+                    src="/images/resume.png" 
+                    alt="Resume Preview" 
+                    fill 
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    priority
+                  />
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-main/40 to-transparent"></div>
+               </div>
               
               <div className="w-full h-1 bg-orange-primary/20 rounded-full mb-8 relative">
                 <motion.div 
@@ -76,8 +81,8 @@ export default function Resume() {
               className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-orange-primary/10 hover:border-orange-primary/30 transition-all"
             >
               <h4 className="text-xl font-extrabold text-orange-primary mb-2">Education</h4>
-              <p className="text-gray-300 font-bold">Bachelor of Science in Information Technology</p>
-              <p className="text-sm text-gray-500">2020 - 2024</p>
+              <p className="text-gray-300 font-bold">Computer Engineering</p>
+              <p className="text-sm text-gray-500">2023 - 2027</p>
             </motion.div>
 
             <motion.div 
@@ -88,7 +93,7 @@ export default function Resume() {
             >
               <h4 className="text-xl font-extrabold text-orange-primary mb-2">Focus Areas</h4>
               <ul className="flex flex-wrap gap-2">
-                {["Frontend Development", "Next.js & React", "Full Stack Architecture", "UI/UX Design"].map(tag => (
+                {["Frontend Development", "Next.js & React", "Full Stack Developer", "Shopify Developer"].map(tag => (
                   <li key={tag} className="px-3 py-1 bg-orange-primary/10 text-orange-primary rounded-full text-xs font-bold uppercase tracking-wider">
                     {tag}
                   </li>
