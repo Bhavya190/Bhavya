@@ -76,7 +76,7 @@ export default function Hero() {
             transition={{ delay: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-primary/10 border border-orange-primary/20 mb-4"
           >
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+            <span className="w-2 h-2 bg-blue-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0, 187, 255, 0.6)]"></span>
             <span className="text-orange-primary text-sm font-bold uppercase tracking-wider">Available for Freelance Work</span>
           </motion.div>
 
