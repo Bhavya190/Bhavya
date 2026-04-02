@@ -22,7 +22,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "E-Commerce Plateform",
+    title: "E-Commerce Platform",
     category: "Next.js",
     image: "/images/project1.png",
     link: "https://github.com/Bhavya190"

@@ -20,15 +20,15 @@ export default function Navbar() {
   const navLinks = [
     { name: "Hero", href: "#hero" },
     { name: "About", href: "#about" },
-    { name: "Project", href: "#projects" },
-    { name: "Certificate", href: "#certificates" },
+    { name: "Projects", href: "#projects" },
+    { name: "Certificates", href: "#certificates" },
     { name: "Skills", href: "#skills" },
     { name: "Resume", href: "#resume" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-dark-main/90 backdrop-blur-md py-4 border-b border-orange-primary/20" : "bg-transparent py-6"}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-dark-main/90 backdrop-blur-md py-4 border-b border-orange-primary/20" : "bg-transparent py-4"}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}

@@ -13,32 +13,37 @@ export default function Hero() {
   const roles = ["Frontend Enthusiast", "Shopify Developer", "Fullstack Developer"];
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
+
     const handleTyping = () => {
       const i = loopNum % roles.length;
       const fullText = roles[i];
 
-      setText(
-        isDeleting
-          ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
-      );
-
-      setTypingSpeed(isDeleting ? 80 : 150);
+      if (isDeleting) {
+        setText(fullText.substring(0, text.length - 1));
+        setTypingSpeed(80);
+      } else {
+        setText(fullText.substring(0, text.length + 1));
+        setTypingSpeed(150);
+      }
 
       if (!isDeleting && text === fullText) {
-        setTimeout(() => setIsDeleting(true), 2000);
+        timer = setTimeout(() => setIsDeleting(true), 1500);
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
+        setTypingSpeed(500);
+      } else {
+        timer = setTimeout(handleTyping, typingSpeed);
       }
     };
 
-    const timer = setTimeout(handleTyping, typingSpeed);
+    timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
+    <section id="hero" className="relative min-h-screen lg:h-screen flex items-center justify-center pt-28 pb-12 lg:py-0 px-4 overflow-hidden">
       {/* Animated Background Circles */}
       <div className="absolute inset-0 flex items-center justify-center -z-10">
         <motion.div
@@ -56,7 +61,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-30">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 relative z-30">
         {/* Left Side: Content */}
         <motion.div 
           initial={{ x: -100, opacity: 0 }}
@@ -69,7 +74,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-primary/10 border border-orange-primary/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-primary/10 border border-orange-primary/20 mb-4"
           >
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
             <span className="text-orange-primary text-sm font-bold uppercase tracking-wider">Available for Freelance Work</span>
@@ -79,7 +84,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-orange-primary text-2xl md:text-3xl font-bold mb-4"
+            className="text-orange-primary text-xl md:text-2xl font-bold mb-2"
           >
             Hello, I&apos;m
           </motion.h2>
@@ -88,7 +93,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-6xl md:text-8xl font-black mb-6 tracking-tighter"
+            className="text-5xl md:text-7xl font-black mb-4 tracking-tighter"
           >
             Bhavya <span className="text-orange-primary">Doshi</span>
           </motion.h1>
@@ -99,13 +104,13 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="space-y-6"
           >
-            <div className="min-h-[60px] md:min-h-[80px]">
-              <h3 className="text-3xl md:text-5xl font-bold italic font-serif text-white/90">
+            <div className="min-h-[50px] md:min-h-[70px]">
+              <h3 className="text-2xl md:text-4xl font-bold italic font-serif text-white/90">
                 {text}
-                <span className="inline-block w-[3px] h-[30px] md:h-[45px] bg-blue-primary ml-1 animate-pulse"></span>
+                <span className="inline-block w-[3px] h-[25px] md:h-[40px] bg-blue-primary ml-1 animate-pulse"></span>
               </h3>
             </div>
-            <p className="text-gray-400 text-xl md:text-2xl max-w-2xl leading-relaxed">
+            <p className="text-gray-400 text-base md:text-xl max-w-2xl leading-relaxed">
               I specialize in crafting high-end, responsive web applications with a focus on premium user experiences and cutting-edge animations.
             </p>
 
@@ -146,12 +151,13 @@ export default function Hero() {
             className="absolute inset-0 bg-orange-primary/20 rounded-full -m-6 md:-m-12 z-0"
           />
           
-          <div className="relative z-10 w-[320px] h-[320px] md:w-[500px] md:h-[500px] rounded-full border-[12px] border-orange-primary/20 p-2 overflow-hidden bg-dark-card shadow-[0_0_50px_rgba(255,140,0,0.2)] group-hover:shadow-[0_0_80px_rgba(255,140,0,0.4)] transition-all duration-500">
+          <div className="relative z-10 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] rounded-full border-[10px] border-orange-primary/20 p-2 overflow-hidden bg-dark-card shadow-[0_0_50px_rgba(255,140,0,0.2)] group-hover:shadow-[0_0_80px_rgba(255,140,0,0.4)] transition-all duration-500">
             <div className="w-full h-full rounded-full overflow-hidden relative">
               <Image 
                 src="/images/me.png" 
                 alt="Bhavya Doshi" 
                 fill 
+                sizes="(max-width: 768px) 320px, 500px"
                 className="object-cover group-hover:scale-110 transition-transform duration-700" 
                 priority
               />

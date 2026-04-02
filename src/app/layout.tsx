@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bhavya Doshi | Portfolio",
   description: "Bhavya Doshi's professional developer portfolio. Full Stack Developer specializing in Next.js and more.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 import BackgroundEffect from "@/components/BackgroundEffect";

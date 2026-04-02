@@ -8,14 +8,14 @@ export default function About() {
     {
       title: "Current Study",
       icon: <GraduationCap className="text-orange-primary w-8 h-8" />,
-      content: "I am currently pursuing my degree in Computer Science, focusing on full-stack web development and modern technologies like Next.js and React.",
-      year: "2024 - Present"
+      content: "I am currently pursuing my degree in Computer Science, focusing on full-stack web development and modern technologies like Next.js, React, Shopify and AI.",
+      year: "2023 - Present"
     },
     {
       title: "Education History",
       icon: <BookOpen className="text-orange-primary w-8 h-8" />,
       content: "Completed my primary and secondary education with excellence, developing a strong foundation in mathematics and technology during my school years.",
-      year: "Completed 2024"
+      year: "Completed 2023"
     }
   ];
 
