@@ -8,24 +8,24 @@ import { GithubIcon } from "./SocialIcons";
 const projects = [
   {
     id: 1,
-    title: "EcoWorld Dashboard",
-    category: "Full Stack",
-    image: "/images/project1.png",
-    link: "https://github.com/Bhavya190"
+    title: "TaskManager",
+    category: "Productive Tool",
+    image: "/images/TaskManager.png",
+    link: "https://github.com/Bhavya190/TaskManager"
   },
   {
     id: 2,
-    title: "Solar Portfolio Site",
-    category: "Web App",
-    image: "/images/project2.png",
-    link: "https://github.com/Bhavya190"
+    title: "Dejavu NFT",
+    category: "Blockchain / NFT",
+    image: "/images/Dejavu NFT.png",
+    link: "https://github.com/Bhavya190/Dejavu-NFT"
   },
   {
     id: 3,
-    title: "E-Commerce Platform",
-    category: "Next.js",
-    image: "/images/project1.png",
-    link: "https://github.com/Bhavya190"
+    title: "Revdix",
+    category: "E-Commerce / Exim",
+    image: "/images/Revdix.png",
+    link: "https://www.revdixexim.com/"
   }
 ];
 
@@ -82,8 +82,9 @@ export default function Projects() {
                  <span className="text-orange-primary mb-2 block font-medium tracking-wider text-sm">{project.category}</span>
                  <h3 className="text-xl font-bold mb-4">{project.title}</h3>
                  <div className="flex justify-between items-center text-sm text-gray-500">
-                    <a href={project.link} className="hover:text-orange-primary transition-colors flex items-center gap-1">
-                       <GithubIcon size={16} /> Repository
+                    <a href={project.link} target="_blank" className="hover:text-orange-primary transition-colors flex items-center gap-2">
+                       {project.link.includes('github.com') ? <GithubIcon size={18} /> : <ExternalLink size={18} />}
+                       {project.link.includes('github.com') ? ' Repository' : ' Visit Website'}
                     </a>
                  </div>
               </div>
