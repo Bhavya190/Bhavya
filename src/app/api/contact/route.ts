@@ -11,13 +11,14 @@ export async function POST(req: Request) {
       service: "gmail",
       auth: {
         user: "bhavya.doshi2k26@gmail.com",
-        pass: "YOUR_APP_PASSWORD",
+        pass: "tlea pftc whni fwho",
       },
     });
 
     const mailOptions = {
       from: "bhavya.doshi2k26@gmail.com",
       to: "bhavya.doshi2k26@gmail.com",
+      replyTo: email,
       subject: `New Portfolio Message from ${name}`,
       text: `
         Name: ${name}
@@ -26,11 +27,8 @@ export async function POST(req: Request) {
       `,
     };
 
-    // We'll simulate a successful send for now as we don't have the real password/tokens
-    // If you add your App Password to 'pass' above, this will work.
-    
-    // await transporter.sendMail(mailOptions);
-    console.log("Mail options prepared:", mailOptions);
+    await transporter.sendMail(mailOptions);
+    console.log("Mail sent successfully to:", mailOptions.to);
 
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
   } catch (error) {
