@@ -23,15 +23,18 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-20 px-4 bg-dark-main relative">
-      <div className="container mx-auto">
-        <motion.h2 
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+           initial={{ opacity: 0, y: -20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           className="mb-20 text-left"
         >
-          My Technical Expertise
-        </motion.h2>
+          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter">
+            Skills
+            <div className="w-20 h-1 bg-cyan-primary mt-4" />
+          </h2>
+        </motion.div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skill, idx) => (

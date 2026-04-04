@@ -50,15 +50,18 @@ const certificates = [
 export default function Certificates() {
   return (
     <section id="certificates" className="py-20 px-4 bg-dark-main border-t border-cyan-primary/10">
-      <div className="container mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+           initial={{ opacity: 0, y: -20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           className="mb-20 text-left"
         >
-          My Certificates
-        </motion.h2>
+          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter">
+            Certificates
+            <div className="w-20 h-1 bg-cyan-primary mt-4" />
+          </h2>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((cert, idx) => (

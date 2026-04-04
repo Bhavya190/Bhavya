@@ -9,15 +9,18 @@ export default function Resume() {
 
   return (
     <section id="resume" className="py-20 px-4 bg-dark-main relative overflow-hidden">
-      <div className="container mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+           initial={{ opacity: 0, y: -20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           className="mb-20 text-left"
         >
-          My Professional Resume
-        </motion.h2>
+          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter">
+            Resume
+            <div className="w-20 h-1 bg-cyan-primary mt-4" />
+          </h2>
+        </motion.div>
 
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
           {/* Resume Preview Image */}
