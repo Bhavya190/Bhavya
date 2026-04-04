@@ -3,6 +3,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { 
+  GithubIcon, 
+  LinkedinIcon, 
+  BehanceIcon, 
+  FacebookIcon, 
+  InstagramIcon, 
+  PinterestIcon, 
+  XIcon, 
+  WhatsappIcon,
+  MailIcon
+} from "./SocialIcons";
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -10,7 +21,7 @@ export default function Hero() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const roles = ["Frontend Enthusiast", "Shopify Developer", "Fullstack Developer"];
+  const roles = ["Frontend Developer", "Shopify Developer", "Full Stack Developer"];
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -43,129 +54,78 @@ export default function Hero() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section id="hero" className="relative min-h-screen lg:h-screen flex items-center justify-center pt-28 pb-12 lg:py-0 px-4 overflow-hidden">
-      {/* Animated Background Circles */}
-      <div className="absolute inset-0 flex items-center justify-center -z-10">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
-            filter: ["blur(40px)", "blur(20px)", "blur(40px)"],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-cyan-primary/20 rounded-full"
+    <section id="hero" className="relative h-screen w-full flex items-center overflow-hidden">
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-bg.png"
+          alt="Workspace Background"
+          fill
+          className="object-cover"
+          priority
         />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 relative z-30">
-        {/* Left Side: Content */}
-        <motion.div 
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="flex-1 text-left"
-        >
-          {/* Availability Badge */}
+      <div className="container mx-auto px-8 md:px-16 relative z-10">
+        <div className="max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-primary/10 border border-cyan-primary/20 mb-4"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="w-2 h-2 bg-blue-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0, 187, 255, 0.6)]"></span>
-            <span className="text-cyan-primary text-sm font-bold uppercase tracking-wider">Available for Freelance Work</span>
-          </motion.div>
-
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-cyan-primary text-xl md:text-2xl font-bold mb-2"
-          >
-            Hello, I&apos;m
-          </motion.h2>
-
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-5xl md:text-7xl font-black mb-4 tracking-tighter"
-          >
-            Bhavya <span className="text-cyan-primary">Doshi</span>
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="min-h-[50px] md:min-h-[70px]">
-              <h3 className="text-2xl md:text-4xl font-bold italic font-serif text-white/90">
+            <h2 className="text-3xl md:text-5xl font-light tracking-widest text-white/90 mb-2 uppercase">
+              Doshi
+            </h2>
+            <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-cyan-primary mb-4 uppercase leading-none">
+              Bhavya
+            </h1>
+            
+            <div className="min-h-[40px]">
+              <p className="text-xl md:text-2xl font-light tracking-[0.3em] text-white/70 uppercase italic flex items-center gap-1">
                 {text}
-                <span className="inline-block w-[3px] h-[25px] md:h-[40px] bg-blue-primary ml-1 animate-pulse"></span>
-              </h3>
+                <span className="inline-block w-[2px] h-[30px] bg-cyan-primary animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]"></span>
+              </p>
             </div>
-            <p className="text-gray-400 text-base md:text-xl max-w-2xl leading-relaxed">
-              I specialize in crafting high-end, responsive web applications with a focus on premium user experiences and cutting-edge animations.
-            </p>
 
-            <div className="flex flex-wrap gap-6 pt-8">
-              <a href="#contact" className="px-10 py-4 bg-cyan-primary text-dark-main font-black text-lg rounded-2xl hover:bg-cyan-secondary hover:scale-105 transition-all shadow-xl shadow-cyan-primary/20">
-                Hire Me
-              </a>
-              <a href="#projects" className="px-10 py-4 border-2 border-cyan-primary text-cyan-primary font-black text-lg rounded-2xl hover:bg-cyan-primary/10 hover:scale-105 transition-all">
-                View Portfolios
-              </a>
-              <a href="/Doshi Bhavya  resume.pdf" target="_blank" className="px-10 py-4 border-2 border-blue-primary/40 text-blue-primary font-black text-lg rounded-2xl hover:bg-blue-primary/10 hover:scale-105 transition-all flex items-center gap-2">
+            <div className="flex flex-wrap gap-4 mt-12">
+              <motion.a
+                href="/Doshi Bhavya resume.pdf"
+                target="_blank"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-3 border-2 border-cyan-primary rounded-full text-cyan-primary font-bold hover:bg-cyan-primary hover:text-dark-main transition-all duration-300 min-w-[160px] text-center shadow-[0_0_15px_rgba(6,182,212,0.2)]"
+              >
                 Resume
-              </a>
+              </motion.a>
+              <motion.a
+                href="#projects"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-3 border-2 border-white rounded-full text-white font-bold hover:bg-white hover:text-black transition-all duration-300 min-w-[160px] text-center shadow-lg"
+              >
+                Portfolio
+              </motion.a>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
+      </div>
 
-        {/* Right Side: Image */}
+      {/* Social Icons at Right Side */}
+      <div className="absolute right-8 md:right-12 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
         <motion.div 
-          initial={{ x: 100, opacity: 0, scale: 0.9 }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative group"
+          className="flex flex-col items-center gap-8 text-white/40"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
         >
-          {/* Enhanced Background Decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-primary to-cyan-secondary opacity-20 blur-[100px] rounded-full -z-10 group-hover:opacity-30 transition-opacity duration-1000"></div>
-          
-          <motion.div
-            animate={{
-              filter: ["blur(15px)", "blur(0px)"],
-              opacity: [0.5, 1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute inset-0 bg-cyan-primary/20 rounded-full -m-6 md:-m-12 z-0"
-          />
-          
-          <div className="relative z-10 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] rounded-full border-[10px] border-cyan-primary/20 p-2 overflow-hidden bg-dark-card shadow-[0_0_50px_rgba(6,182,212,0.2)] group-hover:shadow-[0_0_80px_rgba(6,182,212,0.4)] transition-all duration-500">
-            <div className="w-full h-full rounded-full overflow-hidden relative">
-              <Image 
-                src="/images/me.png" 
-                alt="Bhavya Doshi" 
-                fill 
-                sizes="(max-width: 768px) 320px, 500px"
-                className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                priority
-              />
-            </div>
-          </div>
-          
+          <a href="https://github.com/Bhavya190" target="_blank" className="hover:text-cyan-primary transition-all hover:scale-125"><GithubIcon size={22} /></a>
+          <a href="https://www.linkedin.com/in/bhavya-doshi-a42b11292/" target="_blank" className="hover:text-cyan-primary transition-all hover:scale-125"><LinkedinIcon size={22} /></a>
+          <a href="mailto:bhavya.doshi2k26@gmail.com" className="hover:text-white transition-all hover:scale-125"><MailIcon size={22} /></a>
+          <div className="w-[1px] h-24 bg-gradient-to-b from-cyan-primary/60 to-transparent mt-4" />
         </motion.div>
       </div>
+
     </section>
   );
 }

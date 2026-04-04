@@ -8,7 +8,7 @@ export default function Resume() {
   const resumeUrl = "/Doshi Bhavya  resume.pdf"; // Path to your resume in public folder
 
   return (
-    <section id="resume" className="py-20 px-4 bg-transparent relative overflow-hidden">
+    <section id="resume" className="py-20 px-4 bg-dark-main relative overflow-hidden">
       <div className="container mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,8 @@ export default function Resume() {
               className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-cyan-primary/10 hover:border-cyan-primary/30 transition-all"
             >
               <h4 className="text-xl font-extrabold text-cyan-primary mb-2">Key Experience</h4>
-              <p className="text-gray-300 font-bold italic">"Expertise in building scalable web applications with a focus on premium user experience and modern animations."</p>
+              <p className="text-gray-300 font-bold italic">"Expertise in building scalable web applications with a focus on premium user experience and modern animations.
+                <br></br><br></br> Currently working as a <span className="text-xl font-extrabold text-cyan-primary">Frontend Developer </span> at <span className="text-xl font-extrabold text-cyan-primary">Techforbs Service PVT. LTD.</span>"</p>
             </motion.div>
           </div>
         </div>

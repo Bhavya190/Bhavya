@@ -49,7 +49,7 @@ const certificates = [
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="py-20 px-4 bg-transparent border-t border-cyan-primary/10">
+    <section id="certificates" className="py-20 px-4 bg-dark-main border-t border-cyan-primary/10">
       <div className="container mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
