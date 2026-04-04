@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-orange-primary: #ff8c00;
-  --color-orange-secondary: #ffa500;
+  --color-cyan-primary: #06b6d4;
+  --color-cyan-secondary: #22d3ee;
   --color-dark-main: #0a0a0a;
   --color-dark-card: #121212;
   --color-white: #ffffff;
@@ -12,12 +12,12 @@
 :root {
   --background: var(--color-dark-main);
   --foreground: var(--color-white);
-  --accent: var(--color-orange-primary);
+  --accent: var(--color-cyan-primary);
 }
 
 @layer base {
   body {
-    @apply bg-transparent text-white selection:bg-orange-primary selection:text-dark-main;
+    @apply bg-transparent text-white selection:bg-cyan-primary selection:text-dark-main;
     font-family: 'Inter', sans-serif;
   }
 }
@@ -56,12 +56,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-orange-primary);
+  background: var(--color-cyan-primary);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange-secondary);
+  background: var(--color-cyan-secondary);
 }
 
 .bg-noise {

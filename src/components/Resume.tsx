@@ -14,7 +14,7 @@ export default function Resume() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-orange-primary uppercase tracking-widest"
+          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
         >
           My Professional Resume
         </motion.h2>
@@ -27,8 +27,8 @@ export default function Resume() {
             transition={{ duration: 0.6 }}
             className="w-full md:w-1/2 relative group"
           >
-            <div className="absolute -inset-2 bg-gradient-to-r from-orange-primary/50 to-orange-secondary/50 rounded-3xl blur-xl group-hover:blur-2xl transition-all opacity-30"></div>
-            <div className="relative bg-dark-card/40 backdrop-blur-md border border-orange-primary/30 rounded-3xl p-3 flex flex-col items-center justify-center aspect-[3/4] overflow-hidden">
+            <div className="absolute -inset-2 bg-gradient-to-r from-cyan-primary/50 to-cyan-secondary/50 rounded-3xl blur-xl group-hover:blur-2xl transition-all opacity-30"></div>
+            <div className="relative bg-dark-card/40 backdrop-blur-md border border-cyan-primary/30 rounded-3xl p-3 flex flex-col items-center justify-center aspect-[3/4] overflow-hidden">
                <div className="relative w-full h-full rounded-2xl overflow-hidden mb-4">
                   <Image 
                     src="/images/resume.png" 
@@ -41,12 +41,12 @@ export default function Resume() {
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-main/40 to-transparent"></div>
                </div>
               
-              <div className="w-full h-1 bg-orange-primary/20 rounded-full mb-8 relative">
+              <div className="w-full h-1 bg-cyan-primary/20 rounded-full mb-8 relative">
                 <motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   transition={{ duration: 2, ease: "easeInOut" }}
-                  className="absolute top-0 left-0 h-full bg-orange-primary"
+                  className="absolute top-0 left-0 h-full bg-cyan-primary"
                 />
               </div>
 
@@ -55,7 +55,7 @@ export default function Resume() {
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-4 bg-orange-primary text-dark-main font-extrabold rounded-2xl hover:bg-orange-secondary transition-all hover:scale-[1.02]"
+                  className="flex items-center justify-center gap-2 w-full py-4 bg-cyan-primary text-dark-main font-extrabold rounded-2xl hover:bg-cyan-secondary transition-all hover:scale-[1.02]"
                 >
                   <ExternalLink size={20} />
                   View Resume Online
@@ -63,7 +63,7 @@ export default function Resume() {
                 <a 
                   href={resumeUrl}
                   download="Bhavya_Doshi_Resume.pdf"
-                  className="flex items-center justify-center gap-2 w-full py-4 border-2 border-orange-primary text-orange-primary font-extrabold rounded-2xl hover:bg-orange-primary/10 transition-all"
+                  className="flex items-center justify-center gap-2 w-full py-4 border-2 border-cyan-primary text-cyan-primary font-extrabold rounded-2xl hover:bg-cyan-primary/10 transition-all"
                 >
                   <Download size={20} />
                   Download PDF
@@ -78,9 +78,9 @@ export default function Resume() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-orange-primary/10 hover:border-orange-primary/30 transition-all"
+              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-cyan-primary/10 hover:border-cyan-primary/30 transition-all"
             >
-              <h4 className="text-xl font-extrabold text-orange-primary mb-2">Education</h4>
+              <h4 className="text-xl font-extrabold text-cyan-primary mb-2">Education</h4>
               <p className="text-gray-300 font-bold">Computer Engineering</p>
               <p className="text-sm text-gray-500">2023 - 2027</p>
             </motion.div>
@@ -89,12 +89,12 @@ export default function Resume() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-orange-primary/10 hover:border-orange-primary/30 transition-all"
+              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-cyan-primary/10 hover:border-cyan-primary/30 transition-all"
             >
-              <h4 className="text-xl font-extrabold text-orange-primary mb-2">Focus Areas</h4>
+              <h4 className="text-xl font-extrabold text-cyan-primary mb-2">Focus Areas</h4>
               <ul className="flex flex-wrap gap-2">
                 {["Frontend Development", "Next.js & React", "Full Stack Developer", "Shopify Developer"].map(tag => (
-                  <li key={tag} className="px-3 py-1 bg-orange-primary/10 text-orange-primary rounded-full text-xs font-bold uppercase tracking-wider">
+                  <li key={tag} className="px-3 py-1 bg-cyan-primary/10 text-cyan-primary rounded-full text-xs font-bold uppercase tracking-wider">
                     {tag}
                   </li>
                 ))}
@@ -105,9 +105,9 @@ export default function Resume() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-orange-primary/10 hover:border-orange-primary/30 transition-all"
+              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-cyan-primary/10 hover:border-cyan-primary/30 transition-all"
             >
-              <h4 className="text-xl font-extrabold text-orange-primary mb-2">Key Experience</h4>
+              <h4 className="text-xl font-extrabold text-cyan-primary mb-2">Key Experience</h4>
               <p className="text-gray-300 font-bold italic">"Expertise in building scalable web applications with a focus on premium user experience and modern animations."</p>
             </motion.div>
           </div>

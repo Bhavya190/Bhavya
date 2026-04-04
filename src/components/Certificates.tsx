@@ -49,13 +49,13 @@ const certificates = [
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="py-20 px-4 bg-transparent border-t border-orange-primary/10">
+    <section id="certificates" className="py-20 px-4 bg-transparent border-t border-cyan-primary/10">
       <div className="container mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-orange-primary uppercase tracking-widest"
+          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
         >
           My Certificates
         </motion.h2>
@@ -68,11 +68,11 @@ export default function Certificates() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group rounded-[32px] bg-[#030617] border border-white/5 overflow-hidden hover:border-orange-primary/30 transition-all duration-500 shadow-2xl flex flex-col h-full"
+              className="group rounded-[32px] bg-[#030617] border border-white/5 overflow-hidden hover:border-cyan-primary/30 transition-all duration-500 shadow-2xl flex flex-col h-full"
             >
               {/* Image Section (Screenshot of PDF) */}
               <div className="p-4">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-orange-primary/20 transition-all">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-cyan-primary/20 transition-all">
                   <Image 
                     src={cert.image} 
                     alt={cert.title}
@@ -85,7 +85,7 @@ export default function Certificates() {
                     <a 
                       href={cert.url} 
                       target="_blank" 
-                      className="p-3 bg-orange-primary text-black rounded-full hover:scale-110 transition-transform"
+                      className="p-3 bg-cyan-primary text-black rounded-full hover:scale-110 transition-transform"
                     >
                       <Eye size={24} />
                     </a>
@@ -95,7 +95,7 @@ export default function Certificates() {
               
               {/* Content Section */}
               <div className="px-8 pb-8 pt-2 flex flex-col flex-grow text-center">
-                <h3 className="text-xl md:text-2xl font-bold mb-2 leading-tight group-hover:text-orange-primary transition-colors min-h-[3.5rem] flex items-center justify-center">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 leading-tight group-hover:text-cyan-primary transition-colors min-h-[3.5rem] flex items-center justify-center">
                   {cert.title}
                 </h3>
                 <p className="text-gray-400 font-medium mb-6">

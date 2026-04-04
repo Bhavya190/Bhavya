@@ -7,13 +7,13 @@ export default function About() {
   const cards = [
     {
       title: "Current Study",
-      icon: <GraduationCap className="text-orange-primary w-8 h-8" />,
+      icon: <GraduationCap className="text-cyan-primary w-8 h-8" />,
       content: "I am currently pursuing my degree in Computer Science, focusing on full-stack web development and modern technologies like Next.js, React, Shopify and AI.",
       year: "2023 - Present"
     },
     {
       title: "Education History",
-      icon: <BookOpen className="text-orange-primary w-8 h-8" />,
+      icon: <BookOpen className="text-cyan-primary w-8 h-8" />,
       content: "Completed my primary and secondary education with excellence, developing a strong foundation in mathematics and technology during my school years.",
       year: "Completed 2023"
     }
@@ -26,7 +26,7 @@ export default function About() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-orange-primary uppercase tracking-widest"
+          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
         >
           About Me
         </motion.h2>
@@ -39,13 +39,13 @@ export default function About() {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
               viewport={{ once: true }}
-              className="flex-1 p-8 rounded-3xl bg-dark-card/40 backdrop-blur-md border border-orange-primary/30 hover:border-orange-primary transition-all group relative overflow-hidden"
+              className="flex-1 p-8 rounded-3xl bg-dark-card/40 backdrop-blur-md border border-cyan-primary/30 hover:border-cyan-primary transition-all group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 {card.icon}
               </div>
               <div className="mb-6 flex justify-center">
-                <div className="p-4 bg-orange-primary/10 rounded-full">
+                <div className="p-4 bg-cyan-primary/10 rounded-full">
                   {card.icon}
                 </div>
               </div>
@@ -53,8 +53,8 @@ export default function About() {
               <p className="text-gray-400 text-center text-lg leading-relaxed mb-6">
                 {card.content}
               </p>
-              <div className="mt-auto pt-4 border-t border-orange-primary/10 text-center">
-                 <span className="text-orange-primary font-bold italic">{card.year}</span>
+              <div className="mt-auto pt-4 border-t border-cyan-primary/10 text-center">
+                 <span className="text-cyan-primary font-bold italic">{card.year}</span>
               </div>
             </motion.div>
           ))}

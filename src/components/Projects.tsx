@@ -37,7 +37,7 @@ export default function Projects() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-orange-primary uppercase tracking-widest"
+          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
         >
           My Creative Work
         </motion.h2>
@@ -50,7 +50,7 @@ export default function Projects() {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="relative group rounded-3xl overflow-hidden border border-orange-primary/20 bg-dark-card/40 backdrop-blur-md"
+              className="relative group rounded-3xl overflow-hidden border border-cyan-primary/20 bg-dark-card/40 backdrop-blur-md"
             >
               {/* Image Container */}
               <div className="h-64 overflow-hidden relative">
@@ -69,7 +69,7 @@ export default function Projects() {
                       href={project.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-3 bg-orange-primary text-dark-main rounded-full hover:bg-orange-secondary hover:scale-110 transition-all font-bold"
+                      className="p-3 bg-cyan-primary text-dark-main rounded-full hover:bg-cyan-secondary hover:scale-110 transition-all font-bold"
                     >
                       <ExternalLink size={24} />
                     </a>
@@ -79,10 +79,10 @@ export default function Projects() {
 
               {/* Bottom Content */}
               <div className="p-6 relative">
-                 <span className="text-orange-primary mb-2 block font-medium tracking-wider text-sm">{project.category}</span>
+                 <span className="text-cyan-primary mb-2 block font-medium tracking-wider text-sm">{project.category}</span>
                  <h3 className="text-xl font-bold mb-4">{project.title}</h3>
                  <div className="flex justify-between items-center text-sm text-gray-500">
-                    <a href={project.link} target="_blank" className="hover:text-orange-primary transition-colors flex items-center gap-2">
+                    <a href={project.link} target="_blank" className="hover:text-cyan-primary transition-colors flex items-center gap-2">
                        {project.link.includes('github.com') ? <GithubIcon size={18} /> : <ExternalLink size={18} />}
                        {project.link.includes('github.com') ? ' Repository' : ' Visit Website'}
                     </a>

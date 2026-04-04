@@ -28,7 +28,7 @@ export default function Skills() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 text-orange-primary uppercase tracking-widest"
+          className="text-4xl font-bold text-center mb-16 text-cyan-primary uppercase tracking-widest"
         >
           My Technical Expertise
         </motion.h2>
@@ -41,7 +41,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-orange-primary/20 hover:border-orange-primary/50 transition-all group overflow-hidden relative shadow-lg hover:shadow-orange-primary/5"
+              className="p-6 rounded-2xl bg-dark-card/40 backdrop-blur-md border border-cyan-primary/20 hover:border-cyan-primary/50 transition-all group overflow-hidden relative shadow-lg hover:shadow-cyan-primary/5"
             >
               <div className="flex justify-between items-center mb-4">
                 <div className="flex items-center gap-4">
@@ -53,23 +53,23 @@ export default function Skills() {
                       className="object-contain"
                     />
                   </div>
-                  <span className="text-xl font-bold group-hover:text-orange-primary transition-colors">
+                  <span className="text-xl font-bold group-hover:text-cyan-primary transition-colors">
                     {skill.name}
                   </span>
                 </div>
-                <span className="font-bold text-orange-primary text-xl">
+                <span className="font-bold text-cyan-primary text-xl">
                   {skill.rating}
                   <span className="text-sm opacity-50 ml-1">/10</span>
                 </span>
               </div>
               
-              <div className="w-full h-2 bg-dark-main rounded-full overflow-hidden border border-orange-primary/10">
+              <div className="w-full h-2 bg-dark-main rounded-full overflow-hidden border border-cyan-primary/10">
                 <motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.rating * 10}%` }}
                   transition={{ duration: 1.5, delay: idx * 0.1, ease: "easeOut" }}
                   viewport={{ once: true }}
-                  className="h-full bg-gradient-to-r from-orange-primary/80 to-orange-primary shadow-[0_0_10px_rgba(255,140,0,0.3)]"
+                  className="h-full bg-gradient-to-r from-cyan-primary/80 to-cyan-primary shadow-[0_0_10px_rgba(6,182,212,0.3)]"
                 />
               </div>
             </motion.div>

@@ -57,7 +57,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-orange-primary/20 rounded-full"
+          className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-cyan-primary/20 rounded-full"
         />
       </div>
 
@@ -74,17 +74,17 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-primary/10 border border-orange-primary/20 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-primary/10 border border-cyan-primary/20 mb-4"
           >
             <span className="w-2 h-2 bg-blue-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0, 187, 255, 0.6)]"></span>
-            <span className="text-orange-primary text-sm font-bold uppercase tracking-wider">Available for Freelance Work</span>
+            <span className="text-cyan-primary text-sm font-bold uppercase tracking-wider">Available for Freelance Work</span>
           </motion.div>
 
           <motion.h2 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-orange-primary text-xl md:text-2xl font-bold mb-2"
+            className="text-cyan-primary text-xl md:text-2xl font-bold mb-2"
           >
             Hello, I&apos;m
           </motion.h2>
@@ -95,7 +95,7 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl font-black mb-4 tracking-tighter"
           >
-            Bhavya <span className="text-orange-primary">Doshi</span>
+            Bhavya <span className="text-cyan-primary">Doshi</span>
           </motion.h1>
 
           <motion.div
@@ -115,10 +115,10 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-6 pt-8">
-              <a href="#contact" className="px-10 py-4 bg-orange-primary text-dark-main font-black text-lg rounded-2xl hover:bg-orange-secondary hover:scale-105 transition-all shadow-xl shadow-orange-primary/20">
+              <a href="#contact" className="px-10 py-4 bg-cyan-primary text-dark-main font-black text-lg rounded-2xl hover:bg-cyan-secondary hover:scale-105 transition-all shadow-xl shadow-cyan-primary/20">
                 Hire Me
               </a>
-              <a href="#projects" className="px-10 py-4 border-2 border-orange-primary text-orange-primary font-black text-lg rounded-2xl hover:bg-orange-primary/10 hover:scale-105 transition-all">
+              <a href="#projects" className="px-10 py-4 border-2 border-cyan-primary text-cyan-primary font-black text-lg rounded-2xl hover:bg-cyan-primary/10 hover:scale-105 transition-all">
                 View Portfolios
               </a>
               <a href="/Doshi Bhavya  resume.pdf" target="_blank" className="px-10 py-4 border-2 border-blue-primary/40 text-blue-primary font-black text-lg rounded-2xl hover:bg-blue-primary/10 hover:scale-105 transition-all flex items-center gap-2">
@@ -136,7 +136,7 @@ export default function Hero() {
           className="relative group"
         >
           {/* Enhanced Background Decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-primary to-orange-secondary opacity-20 blur-[100px] rounded-full -z-10 group-hover:opacity-30 transition-opacity duration-1000"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-primary to-cyan-secondary opacity-20 blur-[100px] rounded-full -z-10 group-hover:opacity-30 transition-opacity duration-1000"></div>
           
           <motion.div
             animate={{
@@ -148,10 +148,10 @@ export default function Hero() {
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="absolute inset-0 bg-orange-primary/20 rounded-full -m-6 md:-m-12 z-0"
+            className="absolute inset-0 bg-cyan-primary/20 rounded-full -m-6 md:-m-12 z-0"
           />
           
-          <div className="relative z-10 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] rounded-full border-[10px] border-orange-primary/20 p-2 overflow-hidden bg-dark-card shadow-[0_0_50px_rgba(255,140,0,0.2)] group-hover:shadow-[0_0_80px_rgba(255,140,0,0.4)] transition-all duration-500">
+          <div className="relative z-10 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] rounded-full border-[10px] border-cyan-primary/20 p-2 overflow-hidden bg-dark-card shadow-[0_0_50px_rgba(6,182,212,0.2)] group-hover:shadow-[0_0_80px_rgba(6,182,212,0.4)] transition-all duration-500">
             <div className="w-full h-full rounded-full overflow-hidden relative">
               <Image 
                 src="/images/me.png" 
