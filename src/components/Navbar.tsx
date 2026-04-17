@@ -1,85 +1,95 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Home, User, Layers, Award, Zap, FileText, Send } from "lucide-react";
 import { useState, useEffect } from "react";
-import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+       const sections = ["hero", "about", "projects", "certificates", "skills", "resume", "contact"];
+       for (const section of sections) {
+         const element = document.getElementById(section);
+         if (element) {
+           const rect = element.getBoundingClientRect();
+           // Detect if the section's top is near the middle of the screen
+           if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+             setActiveSection(section);
+           }
+         }
+       }
     };
+    
+    // Set initial active state based on scroll
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Hero", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Certificates", href: "#certificates" },
-    { name: "Skills", href: "#skills" },
-    { name: "Resume", href: "#resume" },
-    { name: "Contact", href: "#contact" },
+    { name: "Hero", href: "#hero", icon: Home },
+    { name: "About", href: "#about", icon: User },
+    { name: "Projects", href: "#projects", icon: Layers },
+    { name: "Certificates", href: "#certificates", icon: Award },
+    { name: "Skills", href: "#skills", icon: Zap },
+    { name: "Resume", href: "#resume", icon: FileText },
+    { name: "Contact", href: "#contact", icon: Send },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-dark-main/90 backdrop-blur-md py-4 border-b border-cyan-primary/20" : "bg-transparent py-4"}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-3xl font-extrabold text-cyan-primary tracking-tighter"
-        >
-          BD<span className="text-white">.</span>
-        </motion.div>
+    <motion.nav 
+      initial={{ opacity: 0, filter: "blur(10px)", scale: 0.9 }}
+      animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 2.8 }} // delay to allow intro animation
+      className="fixed z-[100] flex items-center justify-center 
+                 md:flex-col md:left-8 md:top-1/2 md:bottom-auto md:-translate-y-1/2 md:-translate-x-0 
+                 flex-row bottom-6 left-1/2 -translate-x-1/2 
+                 rounded-full bg-dark-main/50 backdrop-blur-xl border border-cyan-primary/20 
+                 md:py-6 md:px-3 py-3 px-3 sm:px-6 md:gap-5 gap-1 sm:gap-2 
+                 shadow-[0_0_30px_rgba(6,182,212,0.15)] max-w-[95vw]"
+    >
+      {navLinks.map((link) => {
+        const Icon = link.icon;
+        const isActive = activeSection === link.name.toLowerCase();
+        
+        return (
+          <a
+            key={link.name}
+            href={link.href}
+            onClick={() => setActiveSection(link.name.toLowerCase())}
+            className="relative group flex items-center justify-center p-2 sm:p-3 md:p-3.5 rounded-full transition-all duration-300 outline-none"
+          >
+            {/* Active Background Pill */}
+            {isActive && (
+              <motion.div
+                layoutId="activeNavIndicator"
+                className="absolute inset-0 bg-cyan-primary/20 rounded-full border border-cyan-primary/50"
+                initial={false}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+            
+            {/* Icon */}
+            <Icon 
+              size={22} 
+              strokeWidth={isActive ? 2.5 : 1.5}
+              className={`relative z-10 transition-all duration-300 md:scale-100 scale-90 ${
+                isActive 
+                  ? "text-cyan-primary md:scale-110 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" 
+                  : "text-white/50 group-hover:text-white group-hover:scale-110"
+              }`} 
+            />
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="text-gray-300 hover:text-cyan-primary font-bold text-sm uppercase tracking-widest transition-all hover:scale-110"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="flex gap-4 items-center pl-6 border-l border-white/10">
-            <a href="https://github.com/Bhavya190" target="_blank" className="hover:text-cyan-primary transition-all"><GithubIcon size={20} /></a>
-            <a href="https://www.linkedin.com/in/bhavya-doshi-a42b11292/" target="_blank" className="hover:text-cyan-primary transition-all"><LinkedinIcon size={20} /></a>
-          </div>
-        </div>
-
-        {/* Mobile Nav Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white hover:text-cyan-primary transition-colors">
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden absolute top-full left-0 w-full bg-dark-main border-b border-cyan-primary/20 p-8 flex flex-col gap-6"
-        >
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-bold text-center hover:text-cyan-primary transition-all active:scale-95"
-            >
-              {link.name}
-            </a>
-          ))}
-        </motion.div>
-      )}
-    </nav>
+            {/* Desktop Tooltip */}
+            <div className="hidden md:block absolute left-full ml-6 px-3 py-2 bg-dark-card/90 border border-cyan-primary/30 rounded-lg shadow-[0_0_15px_rgba(6,182,212,0.2)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0 whitespace-nowrap z-50 pointer-events-none backdrop-blur-md">
+              <span className="text-[10px] font-bold text-cyan-primary tracking-[0.2em] uppercase">{link.name}</span>
+            </div>
+          </a>
+        );
+      })}
+    </motion.nav>
   );
 }

@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <section id="about" className="relative min-h-screen w-full flex items-center bg-dark-main overflow-hidden py-24">
-      <div className="container mx-auto px-8 md:px-16 flex flex-col lg:flex-row items-center relative z-10">
+      <div className="container mx-auto px-8 md:pl-32 lg:pl-40 md:pr-16 flex flex-col lg:flex-row items-center relative z-10">
         
         {/* Left Column: Content */}
         <div className="flex-1 lg:max-w-xl text-left">
@@ -53,13 +53,13 @@ export default function About() {
         </div>
 
         {/* Right Column: Image */}
-        <div className="flex-1 w-full lg:w-1/2 mt-16 lg:mt-0 relative h-[600px] md:h-[900px] lg:self-start">
+        <div className="flex-none lg:flex-1 w-full lg:w-1/2 mt-16 lg:mt-0 relative h-[500px] md:h-[700px] lg:h-[900px] lg:self-start">
           <motion.div
             initial={{ opacity: 0, x: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "100px" }}
             className="relative h-full w-full"
           >
             <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-transparent to-dark-main lg:block hidden" />

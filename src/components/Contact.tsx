@@ -32,7 +32,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 px-4 bg-dark-main border-t border-cyan-primary/10">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-4xl md:pl-32 lg:pl-40 md:pr-8">
         <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
            whileInView={{ opacity: 1, scale: 1 }}
