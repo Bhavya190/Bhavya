@@ -84,7 +84,7 @@ export default function Projects() {
               <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-primary/5 rounded-full blur-[100px] -m-20 group-hover:bg-cyan-primary/10 transition-all duration-700" />
               
               {/* Screenshot on Left */}
-              <div className="w-full lg:w-1/2 aspect-video relative rounded-3xl overflow-hidden border border-white/10 group-hover:border-cyan-primary/20 transition-all duration-500">
+              <div className="w-full lg:w-[55%] aspect-video relative rounded-3xl overflow-hidden border border-white/10 group-hover:border-cyan-primary/20 transition-all duration-500 shadow-2xl">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -95,24 +95,24 @@ export default function Projects() {
 
               {/* Content in Middle */}
               <div className="flex-1 text-left relative z-10">
-                <h3 className="text-3xl md:text-5xl font-black text-white mb-6 group-hover:text-cyan-primary transition-colors">
+                <h3 className="text-2xl md:text-4xl font-black text-white mb-4 group-hover:text-cyan-primary transition-colors">
                   {project.title}
                 </h3>
                 
-                <div className="mb-8">
-                  <p className="text-cyan-primary font-bold tracking-widest uppercase text-sm mb-2">Technologies used</p>
-                  <p className="text-white/60 text-lg md:text-xl font-light italic">
+                <div className="mb-6">
+                  <p className="text-cyan-primary font-bold tracking-widest uppercase text-xs mb-2">Technologies used</p>
+                  <p className="text-white/60 text-base md:text-lg font-light italic">
                     {project.tech}
                   </p>
                 </div>
 
-                <div className="flex gap-6 mt-10">
+                <div className="flex gap-4 mt-8">
                   <a 
                     href={project.link} 
                     target="_blank"
-                    className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-cyan-primary hover:text-dark-main hover:border-cyan-primary transition-all duration-300 font-bold"
+                    className="flex items-center justify-center gap-2 px-5 py-2.5 border border-cyan-primary/30 text-cyan-primary font-bold text-xs tracking-widest uppercase rounded-full hover:bg-cyan-primary hover:text-dark-main transition-all shadow-lg hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] active:scale-95"
                   >
-                    {project.link.includes('github') ? <GithubIcon size={20} /> : <ExternalLink size={20} />}
+                    {project.link.includes('github') ? <GithubIcon size={18} /> : <ExternalLink size={18} />}
                     {project.link.includes('github') ? 'Source Code' : 'Live Demo'}
                   </a>
                 </div>

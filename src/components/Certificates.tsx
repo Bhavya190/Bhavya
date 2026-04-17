@@ -74,21 +74,21 @@ export default function Certificates() {
               className="group rounded-[32px] bg-[#030617] border border-white/5 overflow-hidden hover:border-cyan-primary/30 transition-all duration-500 shadow-2xl flex flex-col h-full"
             >
               {/* Image Section (Screenshot of PDF) */}
-              <div className="p-4">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-cyan-primary/20 transition-all">
+              <div className="p-2 sm:p-3">
+                <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden bg-white/5 border border-white/10 group-hover:border-cyan-primary/20 transition-all shadow-inner">
                   <Image 
                     src={cert.image} 
                     alt={cert.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     priority={idx < 3}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
                     <a 
                       href={cert.url} 
-                      target="_blank" 
-                      className="p-3 bg-cyan-primary text-black rounded-full hover:scale-110 transition-transform"
+                       target="_blank" 
+                       className="p-3 bg-cyan-primary text-black rounded-full hover:scale-110 transition-transform shadow-[0_0_15px_rgba(6,182,212,0.6)]"
                     >
                       <Eye size={24} />
                     </a>
@@ -105,12 +105,12 @@ export default function Certificates() {
                   {cert.issuer}
                 </p>
 
-                <div className="mt-auto">
+                <div className="mt-auto pt-4">
                   <a 
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-blue-primary text-white font-black text-lg rounded-2xl hover:bg-blue-600 transition-all shadow-xl shadow-blue-primary/20 active:scale-95"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-cyan-primary/30 text-cyan-primary font-bold text-xs tracking-widest uppercase rounded-full hover:bg-cyan-primary hover:text-dark-main transition-all shadow-lg hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] active:scale-95"
                   >
                     View Certificate
                   </a>
